@@ -1,3 +1,4 @@
+import { Link, List, ListItem } from "@mui/material";
 import { Stack } from "@mui/system";
 
 function App() {
@@ -50,24 +51,29 @@ function App() {
           <br /> Ismael
         </Stack>
         <Stack>
-          <ul
+          <List
             style={{
               listStyle: "none",
             }}
           >
             {tabs.map((tab, idx) => (
-              <li
-                style={{
+              <ListItem
+                sx={{
                   fontSize: "1rem",
-                  padding: "0.5rem 0",
+                  padding: "0.5rem 0.3rem 0.5rem 0.3rem",
+                  marginLeft: 0,
+                  "&:hover": {
+                    padding: "0.5rem 0rem 0.5rem 0.6rem",
+                    transition: "all 0.2s ease-in-out",
+                  },
                 }}
                 key={idx}
               >
-                <a
+                <Link
                   href={tab.link}
                   target="_blank"
                   rel="noreferrer"
-                  style={{
+                  sx={{
                     textDecoration: "none",
                     color: "white",
                     "&:hover": {
@@ -76,10 +82,10 @@ function App() {
                   }}
                 >
                   {tab.name}
-                </a>
-              </li>
+                </Link>
+              </ListItem>
             ))}
-          </ul>
+          </List>
         </Stack>
       </Stack>
     </Stack>
